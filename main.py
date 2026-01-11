@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 
 def fetch_ai_news_from_rss() -> List[Dict]:
     """
-    RSSフィードからAI関連のニュースを取得（48時間以内の記事を全て取得）
+    RSSフィードからAI関連のニュースを取得（36時間以内の記事を全て取得）
     """
     # 日本の主要メディアのRSSフィード
     rss_feeds = [
@@ -101,7 +101,7 @@ def fetch_ai_news_from_rss() -> List[Dict]:
 
             feed_articles_count = 0
             for entry in feed.entries:
-                # 48時間以内の記事のみ取得
+                # 36時間以内の記事のみ取得
                 if hasattr(entry, 'published_parsed') and entry.published_parsed:
                     published = datetime(*entry.published_parsed[:6])
                 elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
@@ -109,8 +109,8 @@ def fetch_ai_news_from_rss() -> List[Dict]:
                 else:
                     continue  # 日付情報がない場合はスキップ
 
-                if datetime.now() - published > timedelta(days=2):
-                    continue  # 48時間より古い記事はスキップ
+                if datetime.now() - published > timedelta(hours=36):
+                    continue  # 36時間より古い記事はスキップ
 
                 # キーワードフィルタ（キーワードリストが空の場合は全件取得）
                 if keywords:
@@ -139,7 +139,7 @@ def fetch_ai_news_from_rss() -> List[Dict]:
     # 公開日時でソート（新しい順）
     articles.sort(key=lambda x: x['published'], reverse=True)
 
-    # 最新10件のみに制限（処理時間短縮のため）
+    # 最新10件のみに制限（Gemini API無料プランは1日20リクエストまで）
     return articles[:10]
 
 
