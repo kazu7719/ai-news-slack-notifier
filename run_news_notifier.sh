@@ -11,6 +11,20 @@ LOG_FILE="$(pwd)/logs/cron.log"
 echo "===========================================" >> "$LOG_FILE"
 echo "実行開始: $(date)" >> "$LOG_FILE"
 
+# ネットワーク接続を待機（スリープ復帰直後対策）
+echo "ネットワーク接続を確認中..." >> "$LOG_FILE"
+MAX_RETRY=30
+RETRY_COUNT=0
+while ! ping -c 1 8.8.8.8 > /dev/null 2>&1; do
+    RETRY_COUNT=$((RETRY_COUNT + 1))
+    if [ $RETRY_COUNT -ge $MAX_RETRY ]; then
+        echo "ネットワーク接続タイムアウト" >> "$LOG_FILE"
+        exit 1
+    fi
+    sleep 2
+done
+echo "ネットワーク接続OK" >> "$LOG_FILE"
+
 # 仮想環境をアクティベート
 source venv/bin/activate
 
