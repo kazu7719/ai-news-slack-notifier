@@ -39,11 +39,9 @@ def fetch_ai_news_from_rss() -> List[Dict]:
                 # 企業・サービス
                 "OpenAI", "Google AI", "Microsoft AI", "Meta AI", "Anthropic",
                 # ビジネス活用
-                "AI活用", "AI導入", "DX", "デジタルトランスフォーメーション", "データ分析",
-                "自動化", "効率化", "AIツール", "AIサービス",
+                "AI活用", "AI導入", "AIツール", "AIサービス", "AI搭載", "AI技術",
                 # その他
-                "ロボット", "自動運転", "音声認識", "自然言語処理", "NLP", "画像認識",
-                "予測", "レコメンド"
+                "ロボット", "自動運転", "音声認識", "自然言語処理", "NLP", "画像認識"
             ]
         },
         {
@@ -57,10 +55,8 @@ def fetch_ai_news_from_rss() -> List[Dict]:
                 "LLM", "大規模言語モデル", "言語モデル", "Transformer", "ニューラルネット",
                 "画像生成", "Stable Diffusion", "Midjourney", "DALL-E", "Sora",
                 "OpenAI", "Google AI", "Microsoft AI", "Meta AI", "Anthropic",
-                "AI活用", "AI導入", "DX", "デジタルトランスフォーメーション", "データ分析",
-                "自動化", "効率化", "AIツール", "AIサービス",
-                "ロボット", "自動運転", "音声認識", "自然言語処理", "NLP", "画像認識",
-                "予測", "レコメンド"
+                "AI活用", "AI導入", "AIツール", "AIサービス", "AI搭載", "AI技術",
+                "ロボット", "自動運転", "音声認識", "自然言語処理", "NLP", "画像認識"
             ]
         },
         {
@@ -74,10 +70,8 @@ def fetch_ai_news_from_rss() -> List[Dict]:
                 "LLM", "大規模言語モデル", "言語モデル", "Transformer", "ニューラルネット",
                 "画像生成", "Stable Diffusion", "Midjourney", "DALL-E", "Sora",
                 "OpenAI", "Google AI", "Microsoft AI", "Meta AI", "Anthropic",
-                "AI活用", "AI導入", "DX", "デジタルトランスフォーメーション", "データ分析",
-                "自動化", "効率化", "AIツール", "AIサービス",
-                "ロボット", "自動運転", "音声認識", "自然言語処理", "NLP", "画像認識",
-                "予測", "レコメンド"
+                "AI活用", "AI導入", "AIツール", "AIサービス", "AI搭載", "AI技術",
+                "ロボット", "自動運転", "音声認識", "自然言語処理", "NLP", "画像認識"
             ]
         },
         {
