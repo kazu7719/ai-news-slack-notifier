@@ -21,7 +21,7 @@
 ## 実装したツールについての画像やGIFおよびその説明
 - **実際にAI関連ニュースが自動通知された動画**
 
-[![Image from Gyazo](https://i.gyazo.com/d268e9845f2dc5996d8c1c848ce99927.gif)](https://gyazo.com/d268e9845f2dc5996d8c1c848ce99927)
+[![Image from Gyazo](https://i.gyazo.com/d9283f4dc012de69cf2659067981ffaa.gif)](https://gyazo.com/d9283f4dc012de69cf2659067981ffaa)
 
 
 ---
