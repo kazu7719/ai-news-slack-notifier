@@ -280,6 +280,17 @@ def main():
 
     if not articles:
         print("新しいニュースが見つかりませんでした")
+        # 記事がない場合でもDiscordに通知
+        print("Discordに「ニュースなし」を投稿中...")
+        payload = {
+            "content": f"**AIニュース {datetime.now().strftime('%Y-%m-%d')}**\n\n今日は新しいAI関連ニュースがありませんでした。"
+        }
+        try:
+            response = requests.post(discord_webhook_url, json=payload)
+            response.raise_for_status()
+            print("投稿完了")
+        except Exception as e:
+            print(f"Discord投稿エラー: {e}")
         return
 
     print(f"{len(articles)}件の記事を取得しました")
